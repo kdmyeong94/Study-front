@@ -1,0 +1,120 @@
+ 
+ 1. select
+  1-1. 선택 값 조회하기
+	- < option > 요소에 value 속성이 없을 경우 태그 안의 내용을 가져오기 때문에 값이 필요 없는 항목이더라도 반드시 공백을 지정해야 한다.
+
+	< select id = " user " >
+		< option value = "" > --선택하세요-- < /option > 
+		< option value = "1" > 항목1 < /option > 
+	< /select >
+
+	- dropdown 역시 val () 함수를 사용하여 선택한 < option > 요소의 값을 가져온다.
+	
+	let value = $ ( "#user" ) . val ();
+
+	- 선택 위치 조회하기
+		-> dropdown에 포함된 option 태그 중에서 선택된 항목 ( : selected ) 의 위치를 검사한다.
+
+		$ ( " #user > option : selected " ) . index ();
+
+ 2. Radio의 선택항목
+  2-1. 선택 값 조회하기
+	- 여러개의 항목 중에서 선택된 항목을 의미하는 셀렉터인 ' :checked' 를 사용하여 선택된 요소에 접근한다.
+	- Radio 버튼은 여러 개의 항목 중에서 단 하나만 선택 할 수 있으므로, " : checked"를 사용하여 접근하는 요소 역시 단일 요소가 된다.
+
+		$ ( " 셀렉터 : checked" ) . val ();
+
+
+ 3. checkbox
+	- checkbox는 여러개의 항목 중에서 복수 선택이 가능한 요소이다.
+
+		< input type = " checkbox " name = " hello " class = " my check " value = " 1 " />
+		< input type = " checkbox " name = " hello " class = " my check " value = " 2 " />
+		< input type = " checkbox " name = " hello " class = " my check " value = " 3 " />
+
+ 		$ ( " 셀렉터 : checked " ) ; 
+	- 복수 선택이 가능하기 때문에 접근한 요소는 유사 배열 형태가 된다.
+
+
+ 4. 반복처리
+
+	- HTML 요소에 대한 반복처리를 수행하는 경우, 배열의 각 요소에 대한 index 값을 사용하여 원소에 접근해야 한다.
+
+	- $.each () 함수는 HTML 요소의 수 만큼 콜백 함수를 호출하면서 배열의 인덱스와 원소를 파라미터로 전달한다.
+	
+	for ( let i = 0 ; i < elm.length ; i ++ ) {
+		let value = $ ( elm [ i ] ) . val () ; 
+	}
+
+	$. each ( elm , function ( index, item) { 
+		// index 	: 배열의 위치
+		// item	: 배열의 각 원소
+		let value = $ ( item ) . val () ; 
+	});
+	
+
+ 5. 포커스 관련 이벤트 처리
+
+  5-1. 요소가 포커스에 들어갔음을 감지하는 이벤트
+	- focus () 는 함수로서 사용 할 경우 강제로 포커스를 지정하는 기능을 갖지만, 이벤트로서 사용 할 경우 포커스가 들어갔음을 감지하는 기능을 한다.	
+	
+	$ ( " 셀렉터 " ) . focus ( function ) { 
+		
+	});
+		
+  5-2. 포커스가 빠져 나왔음 을 감지하는 이벤트
+
+	- blur () 함수는 포커스가 빠져나왔음을 감지한다.
+
+	$ ( " 셀렉터 " ) . blur ( function ) { 
+		
+	});
+
+
+ 6. change () 이벤트
+
+	- 요소의 입력, 선택 상태가 변경되었음을 감지하는 이벤트
+
+	$ ( " 셀렉터 " ) . change ( function ) { 
+		
+	});
+
+	- 텍스트를 입력하는 요소일 경우
+		-> 내용이 변경되고 포커스가 빠져 나올 때  이벤트 발생
+	- 체크박스 or 라디오 버튼
+		-> 선택 상태가 변경된 즉시 발생
+	- 드롭 다운
+		-> 선택 상태가 변경된 즉시 발생
+
+ 
+ 7. HTML 속성의 종류
+
+	- attribute
+		-> 값을 갖는 속성
+		-> 설정값 조회 : attr ( key )
+		-> 값 설정 지정 : attr ( key , value )
+
+	- property
+		-> 값을 갖지 않는 속성
+		-> 설정값 조회 : prop ( key )
+		-> 값 설정 기능 : prop ( key , boolean )
+		-> disabled , checked , selected
+
+		# ( 셀렉터 ) . prop ( " disabled " , true ) ;
+
+
+ 8. 정규표현식
+
+  8-1. 정규표현식이란
+	- 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 '형식언어' 이다.
+	- 정규표현식은 많은 텍스트 편집기와 프로그래밍 언어에서 '문자열의 검색과 치환'을 위해 지원하고 있다.
+
+  8-2. 자바스크립트에서 정규표현식의 사용
+
+	let regex = /정규표현식/;
+	
+	if ( ! regex.test ( " 검사할 문자열 " ) ) { ..}
+
+	- javascript는 정규 표현식을 슬래시 ( / ) 로 감싸서 표현
+	- 정규표현식은 하나의 객체 형태가 되고, 내장하고 있는 test () 메서드를 통해 문자열이 그 식에 부합 할 경우 true , 그렇지 않을 경우 false를 리턴
+	-

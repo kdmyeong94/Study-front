@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<body>
+    <ul id="list">
+        <li>empty</li>
+        <li>empty</li>
+        <li>empty</li>
+        <li>empty</li>
+        <li>empty</li>
+    </ul>
+    <input id="execute_btn" type="button" value="execute">
+    <script>
+        // 버튼 클릭시 empty -> happy coding
+        // let t = document.getElementById('execute_btn')
+        // t.addEventListener('click' , function(){
+        //     document.getElementById('list').innerHTML = 'happy coding';
+        // });
+        $("#execute_btn").click(function(){
+            $('#list li').text('happy coding');
+        });
+    </script>
+</body>
+</html>

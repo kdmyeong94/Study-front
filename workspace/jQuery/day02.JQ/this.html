@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <button type="button" id="single">클릭하세요</button>
+    </div>    
+    <hr>
+    <div>
+        <button type="button" class="multi">button0(0번 클릭됨)</button>
+        <button type="button" class="multi">button1(0번 클릭됨)</button>
+        <button type="button" class="multi">button2(0번 클릭됨)</button>
+    </div>
+    <script>
+        let counter = 0;
+        $('#single').click(function(){
+            counter++;
+            $(this).html(counter + "번 클릭하셨습니다.") ;
+        });
+
+        // class로 셀렉 - > 기능 만들것
+        let q = 0;
+        let w = 0;
+        let e = 0;
+        $('.multi:eq(0)').click(function(){
+            q++;
+            $(this).html('button0 ('+q+'번 클릭됨)');
+        });
+        $('.multi:eq(1)').click(function(){
+            w++;
+            $(this).html('button0 ('+w+'번 클릭됨)');
+        });
+        $('.multi:eq(2)').click(function(){
+            e++;
+            $(this).html('button0 ('+e+'번 클릭됨)');
+        });
+
+
+        // 강사님 풀이
+        let multiCnt = { multi:[0,0,0]};
+        $('.multi').click(function(){
+            let idx = $(this).index();
+            multiCnt.multi[idx]++;
+            $(this).html('button' + idx + '(' + multiCnt.multi[idx] + '번 클릭됨');
+        });
+        </script>
+
+</body>
+</html>

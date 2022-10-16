@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Math.random() 사용해서 5자리 인증번호 생성, 출력
+        // 00159
+        // function
+        function a(x,y){
+            return Math.floor((Math.random()*(y - x + 1))+x);      
+        }
+        // 인증번호 5자리
+        let auth = '';
+        for ( var i = 0; i <5; i++){
+            auth += a(0,9);
+        }
+        document.write("<h1>인증번호 :" + auth + "</h1>");
+        // 2. '가위', '바위', '보' -> 랜덤으로 출력
+        // function
+        document.write("<br>--------------------<br>");
+        function b(){
+            let c = Math.floor(Math.random()*(3));
+            if(c == 0){
+                document.write("가위");
+            } else if ( c==1){
+                document.write("바위");
+            } else if ( c==2){
+                document.write("보");
+            }
+        }
+        b();
+        document.write("<br>--------------------<br>");
+        let ar
+        function getGame(){
+            let i = Math.floor(Math.random()*3);
+            document.write(array[i]);
+        }
+        getGame();
+
+        document.write("<br>--------------------<br>");
+        document.write(Math.floor(Math.random()*(3-1+1))+1);
+    </script>
+</body>
+</html>

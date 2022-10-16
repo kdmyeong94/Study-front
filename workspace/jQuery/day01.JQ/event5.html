@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>.on()</h1>
+    <p>이 문장 위로 마우스를 움직여 보세요</p>
+    <div></div>
+
+    <script>
+        // $('p').on('mouseenter', function(){
+        //     $('div').append('마우스 커서가 문장 위로 들어옴<br>');
+        // });
+        // $('p').on('mouseleave', function(){
+        //     $('div').append('마우스 커서가 문장을 빠져나감<br>');
+        // });
+        // $('p').on('click', function(){
+        //     $('div').append('마우스가 문장을 클릭<br>');
+        // });
+
+        $('p').on({mouseenter : function(){
+                 $('div').append('마우스 커서가 문장 위로 들어옴<br>');
+            }, mouseleave : function(){
+                $('div').append('마우스 커서가 문장을 빠져나감<br>');
+            }, click : function(){
+                $('div').append('마우스가 문장을 클릭<br>');
+            }
+        });
+
+
+        // $(document).ready(function () {
+        //     $('p').hover(function () {
+        //         $('div').prepend('들어옴<br>');
+        //     }, function () {
+        //         $("div").prepend("나감<br>");
+        //     });
+            
+        //     $('p').click(function () {
+        //         $("div").prepend("클릭<br>");
+        //     });
+        // });
+    </script>
+    
+</body>
+</html>

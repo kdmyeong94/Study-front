@@ -1,0 +1,43 @@
+
+ 1. Javascript
+
+ 2. Vanilla JS
+	- 바닐라 자바스크립트란 플러그인이나, 라이브러리를 사용하지 않은 순수 자바스크립트를 이야기한다.
+	즉, 바닐라 자바스크립트 = 자바스크립트
+
+ 3. 데이터 타입
+	- javascript의 변수는 표현하는 값의 종류에 따라서 형식이 구분된다.
+	- 이러한 변수의 종류를 데이터 형이라고 한다.
+	- Number
+	- String
+	- Boolean
+	- Object
+	- Null 		: 개발자가 의도적으로 변수의 공간을 비워놓은상태를 의미한다.
+	- undefined	: 정의되지 않음, 처음부터 변수가 선언만 되고 아무런 값도 할당되지 않은 상태를
+			의미한다. 이 상태의 변수는 어떠한 처리도 불가능하다.
+
+ 4. 조건식
+	- if
+	- if ~ else
+	- if ~ else if ~ else
+	- switch
+
+ 5. document.write(출력내용)
+	- HTML 태그 안에 출력되는 내용이므로, 다른 HTMl 태그를 포함하여 출력 할 수 있다.
+
+ 6. prompt
+	- 입력창
+
+ 7. 삼항연산자
+	condition ? expTrue : expFalse;
+	
+	- condition : 조건식
+	- expTrue 	: 참일 때 실행할 식
+	- expFalse	: 거짓일 때 실행할 식
+ 8. 반복문
+	- for
+	- while
+	- break	: 반복 작업을 중간에 중단시키고 싶을때 사용
+	- continue: 해당 조건의 실행을 중단 하지만, 반복은 지속된다. 바로 증감식으로 이동한다.
+ 
+ 9. 함수 function()

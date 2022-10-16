@@ -1,0 +1,12 @@
+
+ 1. HTML
+	- HT	: HyperText, 문서와 문서가 링크로 연결되어 있다.
+	- M	: Markup, 태그로 이루어져 있다.
+	- L	: Language
+	- 웹 사이트의 틀을 만들어 주는 마크업 언어
+
+ 2. list
+	- 순서가 없는 목록 태그
+
+ 3. VSCODE
+	- alt + shift + b : chrome 선택 -> 실행
